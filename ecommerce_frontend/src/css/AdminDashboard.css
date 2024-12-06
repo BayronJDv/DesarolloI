@@ -1,0 +1,98 @@
+/* Contenedor principal */
+.admin-dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+ 
+  /* Barra lateral */
+  .sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+  }
+ 
+  .sidebar h3 {
+    margin-bottom: 20px;
+  }
+ 
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+ 
+  .sidebar li {
+    padding: 10px;
+    cursor: pointer;
+  }
+ 
+  .sidebar li.active {
+    background-color: #007BFF;
+    color: white;
+  }
+ 
+  .sidebar li:hover {
+    background-color: #ddd;
+  }
+ 
+  /* Contenido principal */
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+  }
+ 
+  .admin-dashboard h2 {
+    margin-bottom: 20px;
+  }
+ 
+  .admin-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+ 
+  .search-bar {
+    padding: 8px;
+    width: 300px;
+  }
+ 
+  .filter-btn, .add-product-btn {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+ 
+  .filter-btn:hover, .add-product-btn:hover {
+    background-color: #0056b3;
+  }
+ 
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+ 
+  .product-table th, .product-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+ 
+  .product-table th {
+    background-color: #f4f4f4;
+  }
+ 
+  .details-btn, .edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+ 
+  .details-btn:hover, .edit-btn:hover, .delete-btn:hover {
+    color: #007BFF;
+  }
+ 
+ 
