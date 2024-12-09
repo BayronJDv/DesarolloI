@@ -1,6 +1,10 @@
-import React from "react";
+// src/adminpages/Ventas.jsx
+
+import React, { useState } from "react";
+import "../css/AdminDashboard.css"; // Usamos los estilos existentes.
 
 const Ventas = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const salesData = [
     {
       codigoCompra: "a23b421c4",
@@ -22,10 +26,17 @@ const Ventas = () => {
     },
   ];
 
-  return (
-    <div style={{ padding: "20px", backgroundColor: "#f5f5f5", height: "100vh" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Ventas</h1>
+  const filteredSales = salesData.filter(
+    (sale) =>
+      sale.codigoCompra.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      sale.cedula.includes(searchTerm)
+  );
 
+  return (
+    <div className="admin-dashboard">
+      <h2>Ventas</h2>
+
+      {/* Sección de métricas */}
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "30px" }}>
         <div style={{ textAlign: "center", padding: "10px", background: "#e0f7fa", borderRadius: "8px" }}>
           <h3>Total Ventas</h3>
@@ -33,7 +44,7 @@ const Ventas = () => {
         </div>
         <div style={{ textAlign: "center", padding: "10px", background: "#e8f5e9", borderRadius: "8px" }}>
           <h3>Mejor Venta</h3>
-          <p style={{ fontSize: "18px", fontWeight: "bold" }}>$62.300</p>
+          <p style={{ fontSize: "18px", fontWeight: "bold" }}>$100.200</p>
         </div>
         <div style={{ textAlign: "center", padding: "10px", background: "#fce4ec", borderRadius: "8px" }}>
           <h3>Ganancias</h3>
@@ -41,35 +52,42 @@ const Ventas = () => {
         </div>
       </div>
 
-      <div>
-        <h3 style={{ marginBottom: "10px" }}>Listado de Ventas</h3>
-        <table style={{ width: "100%", borderCollapse: "collapse", background: "#ffffff", borderRadius: "8px" }}>
-          <thead>
-            <tr style={{ background: "#eeeeee" }}>
-              <th style={{ border: "1px solid #ddd", padding: "10px" }}>Código Compra</th>
-              <th style={{ border: "1px solid #ddd", padding: "10px" }}>Cédula</th>
-              <th style={{ border: "1px solid #ddd", padding: "10px" }}>Ver Detalles</th>
-              <th style={{ border: "1px solid #ddd", padding: "10px" }}>Método de Pago</th>
-              <th style={{ border: "1px solid #ddd", padding: "10px" }}>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {salesData.map((sale, index) => (
-              <tr key={index}>
-                <td style={{ border: "1px solid #ddd", padding: "10px" }}>{sale.codigoCompra}</td>
-                <td style={{ border: "1px solid #ddd", padding: "10px" }}>{sale.cedula}</td>
-                <td style={{ border: "1px solid #ddd", padding: "10px", textAlign: "center" }}>
-                  <button style={{ padding: "5px 10px", backgroundColor: "#2196f3", color: "#fff", border: "none", borderRadius: "4px", cursor: "pointer" }}>
-                    Detalles
-                  </button>
-                </td>
-                <td style={{ border: "1px solid #ddd", padding: "10px" }}>{sale.metodoPago}</td>
-                <td style={{ border: "1px solid #ddd", padding: "10px" }}>{sale.total}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Barra de búsqueda */}
+      <div className="admin-controls">
+        <input
+          type="text"
+          placeholder="Buscar venta"
+          className="search-bar"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
+
+      {/* Tabla de ventas */}
+      <table className="product-table">
+        <thead>
+          <tr>
+            <th>Código Compra</th>
+            <th>Cédula</th>
+            <th>Ver Detalles</th>
+            <th>Método de Pago</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredSales.map((sale, index) => (
+            <tr key={index}>
+              <td>{sale.codigoCompra}</td>
+              <td>{sale.cedula}</td>
+              <td>
+                <button className="details-btn">ℹ</button>
+              </td>
+              <td>{sale.metodoPago}</td>
+              <td>{sale.total}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
