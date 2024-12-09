@@ -1,4 +1,3 @@
-// src/components/AdminDashboard.jsx
 import React, { useState } from "react";
 import "../css/AdminDashboard.css"; // Importamos los estilos
 import Articulos from "../adminpages/Articulos";
@@ -6,8 +5,10 @@ import Cliente from "../adminpages/Cliente";
 import Ventas from "../adminpages/Ventas";
 import Configuracion from "../adminpages/Configuracion"; // Importamos Configuracion.jsx
 
+
 const AdminDashboard = () => {
   const [selectedSection, setSelectedSection] = useState("ARTÍCULOS");
+
 
   return (
     <div className="admin-dashboard-container">
@@ -42,6 +43,7 @@ const AdminDashboard = () => {
         </ul>
       </aside>
 
+
       {/* Contenido principal */}
       <main className="main-content">
         {selectedSection === "ARTÍCULOS" && <Articulos />}
@@ -53,5 +55,5 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
 
+export default AdminDashboard;
