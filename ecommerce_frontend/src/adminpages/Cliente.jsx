@@ -1,9 +1,7 @@
 // src/adminpages/Cliente.jsx
 
-
 import React, { useState } from "react";
 import "../css/AdminDashboard.css"; // Usamos los estilos existentes.
-
 
 const Cliente = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,13 +11,11 @@ const Cliente = () => {
     { id: 3, name: "María López", email: "MariaL@gmail.com", payment: "Bank Transfer" },
   ];
 
-
   const filteredClients = clients.filter(
     (client) =>
       client.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       client.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
 
   return (
     <div className="admin-dashboard">
@@ -62,6 +58,5 @@ const Cliente = () => {
     </div>
   );
 };
-
 
 export default Cliente;
