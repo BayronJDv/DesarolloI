@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/AdminDashboard.css"; // Usamos los estilos del dashboard
+import "../css/configuracionArt.css";
 
 
 const Articulos = () => {

@@ -1,8 +1,11 @@
 // src/adminpages/Cliente.jsx
 
 
+
 import React, { useState } from "react";
-import "../css/AdminDashboard.css"; // Usamos los estilos existentes.
+import "../css/clientes.css";
+
+//import "../css/AdminDashboard.css"; // Usamos los estilos existentes.
 
 
 const Cliente = () => {
@@ -22,18 +25,18 @@ const Cliente = () => {
 
 
   return (
-    <div className="admin-dashboard">
+    <div className="clientes-dashboard">
       <h2>Clientes</h2>
-      <div className="admin-controls">
+      <div className="clientes-controls">
         <input
           type="text"
           placeholder="Buscar en cliente"
-          className="search-bar"
+          className="clientes-search-bar"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <table className="product-table">
+      <table className="clientes-table">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -46,14 +49,14 @@ const Cliente = () => {
         <tbody>
           {filteredClients.map((client) => (
             <tr key={client.id}>
-              <td>{client.name}</td>
-              <td>{client.email}</td>
-              <td>{client.payment}</td>
-              <td>
-                <button className="details-btn">ℹ</button>
+              <td data-label="Nombre" >{client.name}</td>
+              <td data-label="E-mail" >{client.email}</td>
+              <td data-label="Método de Pago" >{client.payment}</td>
+              <td data-label="Detalles" >
+                <button className="clientes-details-btn">ℹ</button>
               </td>
-              <td>
-                <button className="delete-btn">🗑</button>
+              <td data-label="Borrar" >
+                <button className="clientes-delete-btn">🗑</button>
               </td>
             </tr>
           ))}

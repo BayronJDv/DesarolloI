@@ -1,0 +1,207 @@
+/* Estilo base para escritorio */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+h3 {
+  margin: 0;
+  color: #555;
+}
+
+p {
+  margin: 5px 0;
+}
+
+
+
+/* Contenedor principal */
+.ventas-dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Estadísticas */
+.ventas-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ventas-stat {
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.ventas-stat:first-child {
+  margin-left: 0;
+}
+
+.ventas-stat:last-child {
+  margin-right: 0;
+}
+
+.ventas-stat h3 {
+  font-size: 16px;
+}
+
+.ventas-stat p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Tabla */
+.ventas-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.ventas-table th,
+.ventas-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.ventas-table th {
+  background: #eeeeee;
+  font-size: 14px;
+}
+
+.ventas-table td button {
+  padding: 5px 10px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Menú principal */
+.menu {
+  width: 200px; /* Reduce el ancho del menú */
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.menu-item:hover {
+  background: #555;
+}
+
+.menu-item.active {
+  background: #2196f3;
+}
+
+.menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .menu {
+    width: 140px; /* Menú más estrecho en móviles */
+    padding: 5px;
+  }
+
+  .menu-item {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .menu-title {
+    font-size: 16px;
+  }
+}
+
+
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+
+  /* Título principal de Ventas */
+h1 {
+  font-size: 24px; /* Unificar tamaño */
+  margin-bottom: 20px;
+}
+  
+h3 {
+  font-size: 24px; /* Ajusta al mismo tamaño que el título principal */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+  /* Ajuste de estadísticas */
+  .ventas-stats {
+    flex-direction: column;
+  }
+
+  .ventas-stat {
+    margin: 10px 0;
+  }
+
+  /* Ajuste de la tabla */
+  .ventas-table {
+    border: 0;
+  }
+
+  .ventas-table thead {
+    display: none;
+  }
+
+  .ventas-table tr {
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .ventas-table td {
+    display: block;
+    text-align: right;
+    border: 0;
+  }
+
+  .ventas-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .ventas-table td button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}

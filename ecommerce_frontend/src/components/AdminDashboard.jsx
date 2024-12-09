@@ -1,6 +1,8 @@
 // src/components/AdminDashboard.jsx
 import React, { useState } from "react";
 import "../css/AdminDashboard.css"; // Importamos los estilos
+import "../css/clientes.css";
+import "../css/ventas.css";
 import Articulos from "../adminpages/Articulos";
 import Cliente from "../adminpages/Cliente";
 import Ventas from "../adminpages/Ventas";

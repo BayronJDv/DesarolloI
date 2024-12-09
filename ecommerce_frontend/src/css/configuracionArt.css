@@ -1,0 +1,124 @@
+/* Ajustar espacio entre el menú lateral y el contenido principal */
+.sidebar {
+    width: 200px; /* Ancho estándar del menú */
+  }
+  
+.main-content {
+    margin-left: 220px; /* Añade un margen más amplio para separar del menú */
+    padding: 20px; /* Agrega espacio interno para un diseño más limpio */
+}
+
+/* Responsive: Menú más estrecho en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+      width: 180px; /* Menú más estrecho en pantallas medianas */
+    }
+  
+    .main-content {
+      margin-left: 200px; /* Ajustar margen para mantener separación */
+      padding: 15px;
+    }
+  }
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+    /* Controles debajo de la tabla */
+    .admin-controls {
+      flex-direction: column; /* Cambia a disposición vertical */
+      align-items: flex-start; /* Alinea a la izquierda */
+      gap: 15px; /* Más separación */
+      margin-top: 20px; /* Añade espacio adicional */
+    }
+
+    /* Ajustar diseño de la barra de búsqueda */
+    .search-bar {
+        width: 100%; /* Ancho dinámico */
+        max-width: 500px; /* Limitar a un máximo */
+      }
+
+  
+    /* Botones más pequeños */
+    .filter-btn, .add-product-btn {
+      width: 100%; /* leto */
+      font-size: 0.8rem;
+    }
+  
+    /* Ocultar títulos específicos en la tabla */
+    .product-table th:nth-child(3), /* Oculta Disponibilidad */
+    .product-table th:nth-child(4), /* Oculta Ver Detalles */
+    .product-table th:nth-child(5) /* Oculta Acción */ {
+      display: none;
+    }
+  
+    /* Ajustar las celdas asociadas */
+    .product-table td:nth-child(3), /* Disponibilidad */
+    .product-table td:nth-child(4), /* Ver Detalles */
+    .product-table td:nth-child(5) /* Acción */ {
+      text-align: center; /* Centrar contenido */
+      width: auto; /* Ajustar tamaño */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 170px; /* Menú aún más estrecho en móviles */
+    }
+  
+    .main-content {
+      margin-left: 170px; /* Reducir margen para adaptarse a pantallas pequeñas */
+      padding: 5px;
+    }
+  }
+  
+  /* Pantallas pequeñas (móviles) */
+  @media (max-width: 480px) {
+
+    .admin-dashboard h2 {
+        margin-top: 10px;
+        font-size: 24px; 
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    
+    /* Controles aún más compactos */
+    .admin-controls {
+      margin-top: 10px;
+      gap: 10px;
+    }
+  
+    /* Ocultar títulos en la tabla */
+    .product-table th:nth-child(3),
+    .product-table th:nth-child(4),
+    .product-table th:nth-child(5) {
+      display: none;
+    }
+  
+    /* Ajustar las celdas asociadas */
+    .product-table td:nth-child(3),
+    .product-table td:nth-child(4),
+    .product-table td:nth-child(5) {
+      text-align: center;
+      width: auto;
+    }
+
+    /* Ajustar diseño de la barra de búsqueda */
+    .search-bar {
+        width: 90%; /* Ancho dinámico */
+        max-width: 500px; /* Limitar a un máximo */
+      }
+
+  
+    /* Botones más pequeños */
+    .filter-btn, .add-product-btn {
+      width: 90%; /* leto */
+      font-size: 0.8rem;
+
+      margin-top: 5px;
+    }
+  
+    /* Espaciado adicional para la tabla */
+    .product-table td {
+      padding: 8px 5px;
+    }
+  }
+  

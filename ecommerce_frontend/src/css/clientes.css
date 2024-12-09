@@ -1,0 +1,148 @@
+/* Base styles for desktop first */
+
+/* Contenedor principal */
+.clientes-dashboard {
+    margin-left: 220px; /* Igual que artículos */
+    padding: 20px;
+  }
+  
+  .clientes-dashboard h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Controles de búsqueda */
+  .clientes-controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .clientes-search-bar {
+    padding: 8px;
+    width: 300px; /* Ancho inicial */
+  }
+  
+  /* Tabla de clientes */
+  .clientes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .clientes-table th,
+  .clientes-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .clientes-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .clientes-details-btn,
+  .clientes-delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .clientes-details-btn:hover,
+  .clientes-delete-btn:hover {
+    color: #007BFF;
+  }
+  
+  /* Responsive styles */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    /* Ocultar encabezados innecesarios */
+    .clientes-table thead {
+      display: none;
+    }
+  
+    /* Convertir las filas en tarjetas */
+    .clientes-table tbody,
+    .clientes-table tr {
+      display: block;
+      width: 100%;
+    }
+  
+    .clientes-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  
+    /* Mostrar las etiquetas de cada fila (Nombre, E-mail, Método de Pago) */
+    .clientes-table td::before {
+      content: attr(data-label); /* Usa el atributo personalizado data-label */
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+  
+    /* Específicamente para las últimas dos columnas */
+    .clientes-table td:nth-child(4)::before {
+      content: "Detalles";
+    }
+  
+    .clientes-table td:nth-child(5)::before {
+      content: "Borrar";
+    }
+  
+    /* Ajustar diseño de la barra de búsqueda */
+    .clientes-search-bar {
+      width: 100%; /* Ancho dinámico */
+      max-width: 500px; /* Limitar a un máximo */
+    }
+  }
+  
+  @media (max-width: 480px) {
+
+    .clientes-dashboard h2 {
+        margin-top: 10px;
+        font-size: 24px; 
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
+    .clientes-dashboard {
+      margin-left: 5px; /* Menú más estrecho en móviles */
+      padding: 5px;
+    }
+  
+    /* Controles más compactos */
+    .clientes-controls {
+      margin-bottom: 15px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+  
+    .clientes-search-bar {
+      width: 99%;
+      font-size: 0.9rem;
+    }
+  
+    /* Reorganizar: Últimas dos columnas debajo */
+    .clientes-table td:nth-child(4),
+    .clientes-table td:nth-child(5) {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+    }
+  
+    .clientes-table td:nth-child(4)::before,
+    .clientes-table td:nth-child(5)::before {
+      display: none; /* Ocultar etiquetas para las columnas "Detalles" y "Borrar" */
+    }
+  
+    /* Tabla compacta */
+    .clientes-table td {
+      padding: 8px;
+    }
+  }
+  

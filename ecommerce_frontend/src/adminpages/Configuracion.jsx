@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/configuracionArt.css";
 
 const Configuracion = () => {
   const configData = [
