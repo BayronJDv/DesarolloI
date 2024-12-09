@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../css/AdminDashboard.css"; // Usamos los estilos del dashboard
 
-
 const Articulos = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const products = [
@@ -10,13 +9,11 @@ const Articulos = () => {
     { id: 3, product: "Puma RS-X", brand: "Puma", availability: 7 },
   ];
 
-
   const filteredProducts = products.filter(
     (product) =>
       product.product.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.brand.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
 
   return (
     <div className="admin-dashboard">
@@ -63,7 +60,4 @@ const Articulos = () => {
   );
 };
 
-
 export default Articulos;
-
-
